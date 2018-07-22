@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TerceraPage } from '../tercera/tercera';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the LugarPage page.
@@ -29,6 +30,7 @@ nombreLugar: string = '';
     navigateToThird(){
       this.navCtrl.push(TerceraPage);
     }
+   
   
 
 }
