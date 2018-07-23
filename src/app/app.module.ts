@@ -13,6 +13,18 @@ import { PerfilPage } from '../pages/perfil/perfil';
 import { AboutPage } from '../pages/about/about';
 import { TerceraPage } from '../pages/tercera/tercera';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth'
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyBnHCWCJlljHg_lGoPleHf8zshBmyjwvkc",
+    authDomain: "geocaching-a9010.firebaseapp.com",
+    databaseURL: "https://geocaching-a9010.firebaseio.com",
+    projectId: "geocaching-a9010",
+    storageBucket: "geocaching-a9010.appspot.com",
+    messagingSenderId: "214881546556"
+  };
 @NgModule({
   declarations: [
     MyApp,
@@ -25,7 +37,10 @@ import { TerceraPage } from '../pages/tercera/tercera';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
