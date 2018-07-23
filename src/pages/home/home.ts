@@ -22,7 +22,9 @@ export class HomePage {
     this.navCtrl.push(LugarPage, {nombre: name});
    }
    irAVistaDeDetalle(){
-     alert('Esta Funcionando');
+     this.navCtrl.push(LugarPage,{lugar:{}});
    }
-
+irAVistaDeDetalleExistente(lugar){
+     this.navCtrl.push(LugarPage,{lugar:lugar});
+}
 }

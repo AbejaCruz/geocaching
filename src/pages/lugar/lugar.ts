@@ -16,12 +16,12 @@ import { HomePage } from '../home/home';
   templateUrl: 'lugar.html',
 })
 export class LugarPage {
-nombreLugar: string = '';
+lugar: string = '';
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  this.nombreLugar= navParams.get('nombre');
+  this.lugar= navParams.get('lugar');
   }
 
-  ionViewDidLoad() {
+  /*ionViewDidLoad() {
     console.log('ionViewDidLoad LugarPage');
   }
   navigateBack() {
@@ -29,8 +29,6 @@ nombreLugar: string = '';
     }
     navigateToThird(){
       this.navCtrl.push(TerceraPage);
-    }
+    }*/
    
-  
-
-}
+  }
