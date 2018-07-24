@@ -12,11 +12,13 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { AboutPage } from '../pages/about/about';
 import { TerceraPage } from '../pages/tercera/tercera';
+import {LoginPage} from '../pages/login/login';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth'
 import { LugaresService } from '../services/lugares.service';
+import {AuthService} from '../services/auth.service';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBnHCWCJlljHg_lGoPleHf8zshBmyjwvkc",
@@ -34,7 +36,8 @@ export const firebaseConfig = {
     TabsPage,
     PerfilPage,
     AboutPage,
-    TerceraPage
+    TerceraPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -51,13 +54,15 @@ export const firebaseConfig = {
     TabsPage,
     PerfilPage,
     AboutPage,
-    TerceraPage
+    TerceraPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LugaresService
+    LugaresService,
+    AuthService
   ]
 })
 export class AppModule {}
