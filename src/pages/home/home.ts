@@ -22,4 +22,12 @@ export class HomePage { lugares: any = []; constructor(public navCtrl: NavContro
 irAVistaDeDetalleExistente(lugar){
      this.navCtrl.push(LugarPage,{lugar:lugar});
 }
+deleteLugar(lugar){
+  if(confirm('Seguro que desea borrar este lugar?')){
+    return this.lugaresService.deleteLugar(lugar).then(()=>{
+      alert('Lugar eliminado correctamente');
+    });
+  }
+  }
+ 
 }

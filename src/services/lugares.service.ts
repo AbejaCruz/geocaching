@@ -19,6 +19,6 @@ public editLugar(lugar) {
     return this.afDB.database.ref('/lugares/' + lugar.id).set(lugar);
 }
 public deleteLugar(lugar){
-    return this.afDB.database.ref('/lugares/' + lugar.id).remove(lugar);
+    return this.afDB.database.ref('/lugares/' + lugar.id).remove();
 }
 }
