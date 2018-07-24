@@ -1,23 +1,18 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LugarPage } from '../lugar/lugar';
+import { LugaresService } from '../../services/lugares.service';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
-  lugares: any = [
-    {nombre: 'Lugar 1', direccion:'Direccion 1', categoria: 'Categoria 1'},
-    {nombre: 'Lugar 2', direccion:'Direccion 2', categoria: 'Categoria 2'},
-    {nombre: 'Lugar 3', direccion:'Direccion 3', categoria: 'Categoria 3'}
-
-
-  ];
-
-  constructor(public navCtrl: NavController) {
-
-  }
+export class HomePage { lugares: any = []; constructor(public navCtrl: NavController, public lugaresService: LugaresService) { 
+  this.lugaresService.getLugares().valueChanges() 
+  .subscribe((lugaresFB) => {
+     this.lugares = lugaresFB; 
+    })
+   }
   navegarALugar(name) { 
     this.navCtrl.push(LugarPage, {nombre: name});
    }
